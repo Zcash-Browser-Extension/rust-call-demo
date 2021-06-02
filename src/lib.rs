@@ -12,7 +12,7 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 extern {
     fn alert(s: &str);
-    fn getInfo() -> js_sys::Promise;
+    //fn getInfo() -> js_sys::Promise;
 }
 
 #[wasm_bindgen]
@@ -22,15 +22,15 @@ pub fn test_return() -> String {
 
 #[wasm_bindgen]
 pub async fn go_action() -> String {
-    let promise = getInfo();
-    let lightdinfo = wasm_bindgen_futures::JsFuture::from(promise).await;
+    //let promise = getInfo();
+    //let lightdinfo = wasm_bindgen_futures::JsFuture::from(promise).await;
 
-    match lightdinfo {
-        Ok(js) => {
-            return js.as_string().unwrap();
-        },
-        Err(_e) => {
-            return String::from("error");
-        }
-    }
+    //match lightdinfo {
+    //    Ok(js) => {
+    //        return js.as_string().unwrap();
+    //   },
+    //    Err(_e) => {
+    //        return String::from("error");
+    //    }
+    //}
 }
